@@ -40,9 +40,4 @@ class unattended_upgrades(
     mode    => '0644',
     content => template($template_auto_upgrades)
   }
-
-  service { $package:
-    ensure    => running,
-    subscribe => [ File[$conf_path], File[$apt_path], Package[$package], ],
-  }
 }
