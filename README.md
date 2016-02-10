@@ -56,7 +56,7 @@ This module has one class, `unattended_upgrades`, with the following
 parameters:
 
     $period                       = 1,                                             # Update period (in days)
-    $repos                        = {},                                            # Repos to upgrade
+    $repos                        = {},                                            # Repos to upgrade (use codenames, e.g. "jessie")
     $blacklist                    = [],                                            # Packages to not update
     $email                        = '',                                            # Email for update status
     $autofix                      = true,                                          # Ensure updates keep getting ins
@@ -93,7 +93,7 @@ configuration is available via the periodic configurations in
     class {'::unattended_upgrades':
       period    => '1',
       repos     => {
-        stable => {
+        jessie => {
           label => 'Debian-Security',
         },
       },
